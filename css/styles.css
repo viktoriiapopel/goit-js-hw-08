@@ -8,11 +8,15 @@
 }
 
 .gallery-item {
-  height: 300px;
+  height: 200px;
   flex: 0 0 calc((100% - 48px) / 3);
   list-style: none;
   overflow: hidden;
-  margin-bottom: 10px;
+  position: relative;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
 }
 
 .gallery-link {
@@ -23,4 +27,5 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
