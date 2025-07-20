@@ -92,5 +92,14 @@ ulImage.addEventListener('click', function (event) {
   const isImageClick = event.target.classList.contains('gallery-image');
   if (!isImageClick) return;
 
-  
+  const selectedFoto = event.target.dataset.source;
+
+  const instance = basicLightbox.create(`
+    <img src="${selectedFoto}" width="1112" height="640">
+  `);
+
+  instance.show();
 });
+
+
+
