@@ -1,3 +1,5 @@
+const ulImage = document.querySelector('.gallery')
+
 const images = [
      {
      preview:
@@ -64,3 +66,31 @@ const images = [
      },
     ];
     
+function fotoTemplate(image) {
+         return `<li class="gallery-item">
+  <a class="gallery-link" href="${image.original}">
+    <img
+      class="gallery-image"
+      src="${image.preview}"
+      data-source="${image.original}"
+      alt="${image.description}"
+    />
+  </a>
+</li>
+`
+}
+    
+function fotosTemplate(images) {
+     return images.map(fotoTemplate).join(`\n`);
+}
+
+ulImage.innerHTML = fotosTemplate(images);
+
+ulImage.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const isImageClick = event.target.classList.contains('gallery-image');
+  if (!isImageClick) return;
+
+  
+});
